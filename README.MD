@@ -9,8 +9,8 @@ npm run dev
 
 ## Things to do
 
-- ❌ Modify the user model to have a 'documents' property that is an array of objects with the following properties: 'name' (String) and 'reference' (String).
-- ❌ Add a new property named 'last_connection' to the user model
+- ✅ Modify the user model to have a 'documents' property that is an array of objects with the following properties: 'name' (String) and 'reference' (String).
+- ✅ Add a new property named 'last_connection' to the user model
 - ❌ Create endpoint POST in user routes `api/users/:uid/documents` that allows to upload many files using Multer middleware.
 - ❌ Modify Multer middleware to save files in different folders.
 - ❌ Modify endpoint `/api/users/premium/:uid` to update only user premium if already uploaded: identification, address, and account status.

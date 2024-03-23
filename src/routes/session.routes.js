@@ -152,6 +152,11 @@ router.post("/login", async (req, res) => {
         email: searchUserBaseData.email,
         image: "/static/image/KurumiSombra.jpg",
       };
+      const last_connection = moment().toDate();
+      await userModel.updateOne(
+        { username: username },
+        { last_connection: last_connection }
+      );
       res.status(200).send({ Status: "OK", data: "User loged" });
     } else {
       req.session.user = {
@@ -161,6 +166,11 @@ router.post("/login", async (req, res) => {
         role: searchUserBaseData.role,
         email: searchUserBaseData.email,
       };
+      const last_connection = moment().toDate();
+      await userModel.updateOne(
+        { username: username },
+        { last_connection: last_connection }
+      );
       res.status(200).send({ Status: "OK", data: "User loged" });
     }
   }

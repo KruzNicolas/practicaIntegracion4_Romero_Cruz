@@ -15,6 +15,14 @@ const schema = new mongoose.Schema(
     gender: { type: String, required: false, index: true },
     role: { type: String, enum: ["ADMIN", "USER", "PREMIUM"], default: "USER" },
     cartId: { type: mongoose.Schema.Types.ObjectId, ref: "carts" },
+    last_connection: { type: Date },
+    documents: [
+      {
+        _id: false,
+        name: { type: String },
+        reference: { type: String },
+      },
+    ],
   },
   {
     versionKey: false,
